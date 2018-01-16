@@ -12,3 +12,5 @@ let expectedOutput1 = [
 ];
 console.log('Test for input containing message property as strings of various length:',
     compareArrays(getShortMessages(input1), expectedOutput1) === true);
+
+console.log('Test for input as empty array:', compareArrays(getShortMessages([]), []) === true);
