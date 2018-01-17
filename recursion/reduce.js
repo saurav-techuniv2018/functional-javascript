@@ -1,8 +1,8 @@
-function reduce(inputArray, operation, initial) {
-    if (inputArray.length == 0) return initial;
+function reduce(arr, fn, initial) {
+    if (arr.length == 0) return initial;
 
-    let currentResult = operation(initial, inputArray[0], 0, inputArray);
-    let othersResult = reduce(inputArray.slice(1), operation, currentResult);
+    let currentResult = fn(initial, arr[0], 0, arr);
+    let othersResult = reduce(arr.slice(1), fn, currentResult);
 
     return othersResult;
 }
