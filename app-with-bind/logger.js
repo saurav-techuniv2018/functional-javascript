@@ -1,9 +1,6 @@
 function logger(namespace) {
-    return function () {
-        let argsArray = Array.prototype.slice.call(arguments);
-        [namespace].concat(argsArray);
-        return console.log.bind(console, )
-    }
+    if (namespace !== '') { return console.log.bind(console, namespace); }
+    else { return console.log; }
 }
 
 module.exports = logger;
